@@ -1,0 +1,171 @@
+.step2,
+.step3,
+.step4 {
+  header {
+    p {
+      text-wrap: pretty;
+    }
+  }
+  & .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: max(13%, 49px);
+  }
+  & button {
+    cursor: pointer;
+    transition: color, font-weight var(--trans), opacity var(--trans);
+  }
+
+  & .previous_btn {
+    border: none;
+    font-size: clamp(1.25rem, 1.125vw, 1.8rem);
+  }
+
+  & .previous_btn:hover {
+    color: var(--Marine_blue);
+    font-weight: var(--font_Bold);
+  }
+
+  & .next_btn {
+    font-size: clamp(1.35rem, 1.15vw, 1.8rem);
+    border-radius: 0.5rem;
+    padding: 0.85em 1.4em;
+    margin: 0 !important;
+  }
+
+  & .next_btn:hover {
+    opacity: 0.8;
+  }
+}
+
+.plan_btns_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.85rem;
+
+  & .plan_btn {
+    padding: 2rem 1.55rem;
+    display: grid;
+    place-items: flex-start;
+    border: 1px solid var(--Light_gray);
+    border-radius: 0.75rem;
+    background-color: var(--White);
+    cursor: pointer;
+    transition: border var(--trans);
+    text-align: left;
+    gap: 4.25rem;
+    & img {
+      aspect-ratio: 16/9;
+    }
+    & .plan_txt {
+      display: grid;
+      gap: 0.725rem;
+      & b {
+        font-size: clamp(1.65rem, 1.1vw, 1.8rem);
+      }
+      & p {
+        font-size: clamp(1.5rem, 1vw, 1.6rem);
+      }
+      & small {
+        font-size: clamp(1rem, 0.85vw, 1.3rem);
+        visibility: hidden;
+      }
+    }
+  }
+  & .plan_btn.active {
+    outline: 1px solid var(--Purplish_blue) !important;
+  }
+  & .plan_btn:hover,
+  & label:hover {
+    border: 1px solid var(--Purplish_blue) !important;
+  }
+}
+
+.switch_box {
+  justify-content: space-evenly;
+  margin: max(10%, 38px) max(23%, 96px);
+
+  & label:not(:nth-of-type(2)) {
+    display: block;
+    font-size: clamp(1.35rem, 1vw, 1.6rem);
+  }
+  & label.active {
+    color: var(--Marine_blue);
+    font-weight: var(--font_Bold);
+  }
+  & label:nth-of-type(2) {
+    width: 38px;
+    height: 20px;
+    border-radius: 1rem;
+    background-color: var(--Marine_blue);
+    position: relative;
+    cursor: pointer;
+
+    & input {
+      display: none;
+    }
+
+    & .switch {
+      position: absolute;
+      inset: 0;
+      background-color: transparent;
+    }
+    & .switch::before {
+      content: "";
+      background-color: var(--White);
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      position: absolute;
+      inset: 4px 0 0 4px;
+      transition: var(--trans);
+    }
+
+    & input:checked + .switch::before {
+      transform: translateX(17px);
+    }
+  }
+}
+
+/* Step3 Strart */
+
+.step3_customization {
+  & .plan_btns_box {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+    gap: 1.5rem;
+
+    & label {
+      border: 1px solid var(--Light_gray);
+      border-radius: 0.75rem;
+      cursor: pointer;
+      padding: 2.125rem 2.5rem;
+      gap: 2.25rem;
+      transition: border var(--trans);
+
+      & input {
+        width: 2rem;
+        height: 2rem;
+        accent-color: var(--Purplish_blue);
+      }
+      & .add_ons_txt {
+        justify-content: space-between;
+        width: 100%;
+        & h3 {
+          display: grid;
+          gap: 0.5rem;
+          font-size: clamp(1.35rem, 1.125vw, 2rem);
+
+          & p {
+            font-size: clamp(1.25rem, 0.75vw, 1.6rem);
+          }
+        }
+        & span {
+          font-size: clamp(1.2rem, 1.001vw, 1.8rem);
+        }
+      }
+    }
+  }
+}

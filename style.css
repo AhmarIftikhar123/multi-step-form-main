@@ -1,0 +1,442 @@
+/* Root Variables */
+:root {
+  /* Primary Colors */
+  --Marine_blue: hsl(213, 96%, 18%);
+  --Purplish_blue: hsl(243, 100%, 62%);
+  --Pastel_blue: hsl(228, 100%, 84%);
+  --Light_blue: hsl(206, 94%, 87%);
+  --Strawberry_red: hsl(354, 84%, 57%);
+
+  /* Neutral Colors */
+  --Cool_gray: hsl(231, 11%, 63%);
+  --Light_gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  --trans: 0.2s ease-in-out;
+  --font_Regular: 400;
+  --font_Medium: 500;
+  --font_Bold: 700;
+}
+
+/* Font Faces */
+@font-face {
+  font-family: Ubuntu;
+  src: url(assets/fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url(assets/fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url(assets/fonts/Ubuntu-Bold.ttf);
+  font-weight: 700;
+}
+.step4,
+.step2,
+.step3,
+.step5 {
+  display: none;
+}
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Ubuntu;
+}
+
+/* Set base font size to 10px (62.5% of 16px) for easy rem calculations */
+html {
+  font-size: 62.5%;
+}
+
+/* Ensure body takes at least the full viewport height */
+body {
+  min-height: 100vh;
+  background-color: var(--Magnolia);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper Styles */
+.wrapper {
+  background-color: var(--White);
+  width: clamp(78rem, 65.25vw, 95rem);
+  height: clamp(50rem, 41.75vw, 65rem);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  container: wrapper / inline-size;
+}
+
+/* Sidebar Styles */
+.side_bar {
+  background: url(assets/images/bg-sidebar-desktop.svg) no-repeat;
+  background-size: cover;
+  width: 30.15%;
+
+  /* Sidebar Data Styles */
+  & .side_bar_data {
+    padding: 4rem 3rem;
+    display: grid;
+    gap: 3.15rem;
+
+    /* Step Box Styles */
+    & .step_box {
+      display: flex;
+      gap: 1.75rem;
+
+      /* Circle Styles */
+      & .circle {
+        width: 3.35rem;
+        height: 3.35rem;
+        font-weight: var(--font_Medium);
+        font-size: clamp(1.2rem, 1.05vw, 1.6rem);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        color: var(--White);
+        border: 1px solid var(--Light_blue);
+      }
+
+      /* Active Circle Styles */
+      & .circle.active {
+        color: var(--Marine_blue);
+        background-color: var(--Light_blue);
+        border: none;
+      }
+
+      /* Step Text Styles */
+      & .step_txt {
+        text-transform: uppercase;
+        display: grid;
+        gap: 0.5rem;
+
+        /* Bold Text Styles */
+        & b {
+          font-size: clamp(1.2rem, 1vw, 1.6rem);
+          letter-spacing: 0.1rem;
+        }
+      }
+
+      /* Step Number Styles */
+      & .step_num {
+        font-size: clamp(0.8rem, 1vw, 1.2rem);
+        font-weight: var(--font_Regular);
+      }
+    }
+  }
+}
+
+/* Steps Styles */
+.step {
+  width: 59%;
+  padding-top: 4rem;
+
+  /* Header Styles */
+  & header {
+    display: grid;
+    gap: 1.25rem;
+
+    /* Heading Styles */
+    & h1 {
+      font-size: clamp(2.5rem, 2.25vw, 3.25rem);
+    }
+
+    /* Paragraph Styles */
+    & p {
+      font-size: clamp(1.55rem, 1.115vw, 1.75rem);
+    }
+  }
+
+  /* Input Wrapper Styles */
+  .inputs_wrapper {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  /* Step Data Wrapper Styles */
+  & .step_data_wrapper {
+    padding-top: 4rem;
+    width: 84%;
+
+    /* Input Box Styles */
+    & .input_box {
+      display: grid;
+      gap: 1rem;
+
+      /* Input Text Styles */
+      & .input_txt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* Label Styles */
+        & label {
+          font-size: clamp(1.2rem, 1vw, 1.6rem);
+        }
+
+        /* Error Text Styles */
+        & .error {
+          visibility: hidden;
+          font-size: clamp(1.2rem, 1.01vw, 1.6rem);
+          color: var(--Strawberry_red);
+        }
+      }
+
+      /* Input Styles */
+      & input {
+        width: 100%;
+        font-size: clamp(1.25rem, 1.1vw, 1.6rem);
+        padding: 1.25rem 1.85rem;
+        border: 1px solid var(--Light_gray);
+        border-radius: 0.85rem;
+        transition: border var(--trans);
+      }
+      & input.blur {
+        border: 1px solid var(--Light_gray);
+      }
+
+      & input.error {
+        border: 1px solid var(--Strawberry_red);
+      }
+
+      /* Input Placeholder Styles */
+      & input::placeholder {
+        font-weight: var(--font_Medium);
+        color: var(--Cool_gray);
+      }
+
+      /* Input Hover Styles */
+      & input:hover {
+        border: 1px solid var(--Purplish_blue);
+      }
+
+      /* Input Focus Styles */
+      & input:focus {
+        border: 1px solid var(--Purplish_blue);
+        outline: none;
+      }
+    }
+  }
+
+  /* Buttons Styles */
+  & .btns {
+    width: 84%;
+
+    /* Next Button Styles */
+    & .next_btn {
+      margin: 5.5vw 0 0 auto;
+      font-size: clamp(1.25rem, 1.15vw, 1.6rem);
+      display: block;
+      /* margin: 9rem 0 0 auto; */
+      padding: 1.5rem 2.35rem;
+      border-radius: 0.85rem;
+      border: none;
+      background-color: var(--Marine_blue);
+      cursor: pointer;
+      transition: opacity var(--trans);
+    }
+    & .next_btn:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* global classes */
+
+.flex_x_center {
+  display: flex;
+  align-items: center;
+}
+
+.marine_txt {
+  color: var(--Marine_blue);
+}
+
+.white_txt {
+  color: var(--White);
+}
+
+.cool_gray_txt {
+  color: var(--Cool_gray);
+}
+
+.mangolia_txt {
+  color: var(--Magnolia);
+}
+.marine_blue_txt {
+  color: var(--Marine_blue);
+}
+
+.purplish_blue_txt {
+  color: var(--Purplish_blue);
+}
+
+.bold_font {
+  font-weight: var(--font_Bold);
+}
+
+.medium_font {
+  font-weight: var(--font_Medium);
+}
+.regular_font {
+  font-weight: var(--font_Regular);
+}
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  /* Sidebar styles for mobile */
+  .side_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: url(assets/images/bg-sidebar-mobile.svg) no-repeat;
+    background-size: cover;
+    height: 17rem;
+  }
+
+  /* Step styles for mobile */
+  .step {
+    width: 100%;
+    z-index: 2;
+    margin-top: 8.25rem;
+    border-radius: 0.75rem;
+    background-color: var(--White);
+    padding-inline: 2rem;
+    padding-top: 3rem;
+  }
+
+  /* Input wrapper styles for mobile */
+  .inputs_wrapper {
+    gap: 0.75rem !important;
+  }
+
+  /* Hide step text for mobile */
+  .step_txt {
+    display: none !important;
+  }
+
+  /* Sidebar data styles for mobile */
+  .side_bar_data {
+    display: flex !important;
+    justify-content: center;
+    padding: 3rem 0 !important;
+    align-items: center;
+    gap: 1.5rem !important;
+  }
+
+  /* Header styles for mobile */
+  header {
+    gap: 1.35rem !important;
+  }
+
+  .step2 header p {
+    text-wrap: balance;
+    line-height: 2.25rem;
+  }
+
+  /* Step data wrapper styles for mobile */
+  .step_data_wrapper {
+    width: 100% !important;
+    padding-top: 2.5rem !important;
+  }
+
+  /* Buttons styles for mobile */
+  .btns {
+    width: 100%;
+    position: fixed;
+    top: 118%;
+    right: 5%;
+  }
+
+  /* Step 2 start media-queries */
+  .step2 {
+    .btns {
+      width: 90%;
+    }
+  }
+  .step2_customization {
+    & .plan_btns_box {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      & .plan_btn {
+        padding: 1.5rem 1.75rem;
+        display: flex;
+        place-items: stretch;
+        gap: 1.35rem;
+        transition: border var(--trans);
+        & .plan_txt small {
+          display: none;
+        }
+      }
+    }
+  }
+
+  & .switch_box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  /* step3 Media Queries */
+
+  .step3_customization {
+    padding-top: 3.5rem !important;
+
+    & .plan_btns_box {
+      & label {
+        padding: 1.25rem 2rem !important;
+      }
+    }
+  }
+
+  .step3 header p {
+    text-wrap: wrap !important;
+  }
+
+  /* step4 Media queries */
+
+  .step4_customization {
+    & .plan_btns_box {
+      gap: 1.125rem !important;
+      & .plan_purchased_box {
+        padding-block: 2.5rem 1.25rem !important;
+      }
+    }
+  }
+
+  .step5 {
+    & .subscribtion_txt {
+      padding-inline: 6% !important;
+      padding-top: 3rem;
+      gap: 0;
+    }
+  }
+}
+
+@media (width <= 320px) {
+  & .plan_btns_box {
+    & label {
+      gap: 1rem !important;
+    }
+  }
+}

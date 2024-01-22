@@ -1,0 +1,76 @@
+.step4_customization {
+  & .plan_btns_box {
+    grid-template-columns: none;
+    padding-inline: 5%;
+
+    & b {
+      font-size: clamp(1.5rem, 1.1vw, 1.8rem);
+    }
+
+    & .plan_purchased_box {
+      justify-content: space-between;
+      padding-block: 2.25rem;
+      border-bottom: 1px solid var(--Light_gray);
+
+      & h2 {
+        line-height: 2rem;
+        & span {
+          font-size: clamp(1.35rem, 1.15vw, 1.6rem);
+        }
+        & a {
+          font-weight: var(--font_Medium);
+        }
+        & a:hover {
+          color: var(--Purplish_blue);
+        }
+      }
+    }
+
+    & .service_selected_box {
+      justify-content: space-between;
+    }
+    & p {
+      font-size: clamp(1.35rem, 1.015vw, 1.8rem);
+    }
+    & span {
+      font-size: clamp(1.25rem, 1vw, 1.6rem);
+    }
+    & .total_bill {
+      font-size: clamp(1.65rem, 2vw, 2rem);
+    }
+  }
+  & .Servies_finalization {
+    display: none;
+    gap: 2rem;
+    margin-bottom: max(7%, 2rem);
+  }
+}
+
+/* .plan_btns_box .service_selected_box:last-of-type {
+  margin-top: 3rem;
+} */
+
+/* Step 5 start  */
+
+.step5 {
+  display: none;
+  margin: auto;
+  padding: 0 !important;
+  & .subscribtion_txt {
+    text-align: center;
+    padding-inline: 14%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.25rem;
+    & img {
+      width: max(18%, 6rem);
+    }
+    & h1 {
+      font-size: clamp(2.5rem, 2.25vw, 3.4rem);
+    }
+    & p {
+      font-size: clamp(1.65rem, 1.15vw, 2.6rem);
+      line-height: 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="step2_3.css" />
+    <link rel="stylesheet" href="step4_5.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar start -->
+
+      <div class="side_bar">
+        <div class="side_bar_data">
+          <!-- step_box -->
+          <!-- circle 1 -->
+          <div class="step_box">
+            <span class="circle circle1 active">1</span>
+            <div class="step_txt">
+              <p class="step_num cool_gray_txt">Step 1</p>
+              <b class="step_name mangolia_txt"> Your info </b>
+            </div>
+          </div>
+
+          <!-- circle 2 -->
+
+          <div class="step_box">
+            <span class="circle circle2">2</span>
+            <div class="step_txt">
+              <p class="step_num cool_gray_txt">Step 2</p>
+              <b class="step_name mangolia_txt"> Select plan </b>
+            </div>
+          </div>
+
+          <!-- circle 3 -->
+
+          <div class="step_box">
+            <span class="circle circle3">3</span>
+            <div class="step_txt">
+              <p class="step_num cool_gray_txt">Step 3</p>
+              <b class="step_name mangolia_txt"> Add-ons </b>
+            </div>
+          </div>
+
+          <!-- circle 4 -->
+
+          <div class="step_box">
+            <span class="circle circle4">4</span>
+            <div class="step_txt">
+              <p class="step_num cool_gray_txt">Step 4</p>
+              <b class="step_name mangolia_txt"> Summary </b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar end -->
+
+      <!-- Step 1 start -->
+
+      <div class="step step1">
+        <header>
+          <h1 class="marine_blue_txt">Personal info</h1>
+
+          <p class="cool_gray_txt">
+            Please provide your name, email address, and phone number.
+          </p>
+        </header>
+
+        <!-- step_data_wrapper // for same padding on all pages -->
+        <div class="step_data_wrapper inputs_wrapper">
+          <!-- name_input -->
+
+          <div class="input_box">
+            <div class="input_txt">
+              <label for="name " class="marine_blue_txt">Name</label>
+              <b class="error">This field is required</b>
+            </div>
+            <input
+              type="text"
+              placeholder="e.g. Stephen King"
+              id="name"
+            />
+          </div>
+
+          <!-- email input -->
+
+          <div class="input_box">
+            <div class="input_txt">
+              <label for="email " class="marine_blue_txt">Email Address</label>
+              <b class="error">This field is required</b>
+            </div>
+            <input
+              type="email"
+              placeholder="e.g. stephenking@lorem.com"
+              id="email"
+            />
+          </div>
+
+          <!-- phone_num input -->
+
+          <div class="input_box">
+            <div class="input_txt">
+              <label for="phone_num " class="marine_blue_txt"
+                >Phone Number</label
+              >
+              <b class="error">This field is required</b>
+            </div>
+            <input
+              type="number"
+              placeholder="e.g. +1 234 567 890"
+              id="phone_num"
+            />
+          </div>
+        </div>
+        <div class="btns">
+          <button
+            type="button"
+            class="white_txt next_btn"
+            style="display: block; margin: 5.5vw 0 0 auto"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+      <!-- Step 1 end -->
+
+      <!-- Step 2 start -->
+      <div class="step step2">
+        <header>
+          <h1 class="marine_blue_txt">Select your plan</h1>
+
+          <p class="cool_gray_txt">
+            You have the option of monthly or yearly billing.
+          </p>
+        </header>
+
+        <!-- step_data_wrapper // for same padding on all pages -->
+        <div class="step_data_wrapper step2_customization">
+          <!-- plan_btns -->
+
+          <div class="plan_btns_box">
+            <!-- Arcade -->
+
+            <button type="button" class="plan_btn active">
+              <img src="assets/images/icon-arcade.svg" alt="arcade" />
+              <div class="plan_txt">
+                <b class="marine_blue_txt">Arcade</b>
+                <p class="cool_gray_txt">$9/mo</p>
+                <small class="marine_blue_txt">2 months free</small>
+              </div>
+            </button>
+
+            <!-- advanced -->
+
+            <button type="button" class="plan_btn">
+              <img src="assets/images/icon-advanced.svg" alt="arcade" />
+              <div class="plan_txt">
+                <b class="marine_blue_txt">Advanced</b>
+                <p class="cool_gray_txt">$12/mo</p>
+                <small class="marine_blue_txt">2 months free</small>
+              </div>
+            </button>
+
+            <!-- Pro -->
+
+            <button type="button" class="plan_btn">
+              <img src="assets/images/icon-pro.svg" alt="arcade" />
+              <div class="plan_txt">
+                <b class="marine_blue_txt">Pro</b>
+                <p class="cool_gray_txt">$15/mo</p>
+                <small class="marine_blue_txt">2 months free</small>
+              </div>
+            </button>
+          </div>
+          <!-- scroller -->
+          <div class="switch_box flex_x_center">
+            <label for="switch" class="medium_font cool_gray_txt active"
+              >Monthly</label
+            >
+            <label id="scroller">
+              <input type="checkbox" />
+              <span class="switch"></span>
+            </label>
+            <label for="switch" class="medium_font cool_gray_txt">Yearly</label>
+          </div>
+        </div>
+        <div class="btns">
+          <!-- previous_btn -->
+
+          <button type="button" class="previous_btn cool_gray_txt">
+            Go Back
+          </button>
+
+          <button type="button" class="white_txt medium_font next_btn">
+            Next Step
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 end -->
+
+      <!-- Step 3 start -->
+
+      <div class="step step3">
+        <header>
+          <h1 class="marine_blue_txt">Pick add-ons</h1>
+
+          <p class="cool_gray_txt">
+            Add-ons help enhance your gaming experience.
+          </p>
+        </header>
+
+        <!-- step_data_wrapper // for same padding on all pages -->
+        <div class="step_data_wrapper step3_customization">
+          <!-- plan_btns -->
+
+          <div class="plan_btns_box">
+            <!-- 1st plan -->
+            <label for="online_ser" class="flex_x_center">
+              <input type="checkbox" id="online_ser" class="add-ons_input" />
+              <div class="add_ons_txt flex_x_center">
+                <h3 class="marine_blue_txt">
+                  <span>Online service</span>
+                  <p class="cool_gray_txt regular_font">
+                    Access to multiplayer games
+                  </p>
+                </h3>
+                <span class="service_chg purplish_blue_txt medium_font"
+                  >+$1/mo</span
+                >
+              </div>
+            </label>
+
+            <!-- 2nd plan -->
+
+            <label for="l_storange" class="flex_x_center">
+              <input type="checkbox" class="add-ons_input" id="l_storange" />
+              <div class="add_ons_txt flex_x_center">
+                <h3 class="marine_blue_txt">
+                  <span> Larger storage</span>
+                  <p class="cool_gray_txt regular_font">
+                    Extra 1TB of cloud save
+                  </p>
+                </h3>
+                <span class="service_chg purplish_blue_txt medium_font"
+                  >+$2/mo</span
+                >
+              </div>
+            </label>
+
+            <!-- 3rd plan -->
+
+            <label for="profile" class="flex_x_center">
+              <input type="checkbox" class="add-ons_input" id="profile" />
+              <div class="add_ons_txt flex_x_center">
+                <h3 class="marine_blue_txt">
+                  <span>Customizable Profile</span>
+                  <p class="cool_gray_txt regular_font">
+                    Custom theme on your profile
+                  </p>
+                </h3>
+                <span class="service_chg purplish_blue_txt" id=" medium_font"
+                  >+$2/mo</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="btns">
+          <!-- previous_btn -->
+
+          <button type="button" class="previous_btn cool_gray_txt">
+            Go Back
+          </button>
+
+          <button type="button" class="white_txt medium_font next_btn">
+            Next Step
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 end -->
+
+      <!-- Step 4 start -->
+
+      <div class="step step4">
+        <header>
+          <h1 class="marine_blue_txt">Finishing up</h1>
+
+          <p class="cool_gray_txt">
+            Double-check everything looks ok before confirming.
+          </p>
+        </header>
+
+        <!-- step_data_wrapper // for same padding on all pages -->
+        <div class="step_data_wrapper step4_customization">
+          <!-- plan_btns -->
+
+          <div class="plan_btns_box">
+            <div class="plan_purchased_box flex_x_center">
+              <h2>
+                <span id="customer_selection " class="marine_txt"></span>
+                <a href="#" style="display: block">Change</a>
+              </h2>
+              <b id="plan_prize" class="marine_txt"></b>
+            </div>
+            <!--  Servies_finalization-->
+            <div class="Servies_finalization"></div>
+
+            <div class="service_selected_box flex_x_center">
+              <p class="total_customer_bill_name cool_gray_txt">
+                Total (per month)
+              </p>
+              <span class="total_bill purplish_blue_txt bold_font">
+                +$12/mo
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="btns">
+          <!-- previous_btn -->
+
+          <button type="button" class="previous_btn cool_gray_txt">
+            Go Back
+          </button>
+
+          <button type="button" class="white_txt medium_font next_btn">
+            Confirm
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4 end -->
+
+      <!-- Step 5 start -->
+
+      <div class="step step5 flex_x_center">
+        <div class="subscribtion_txt flex_x_center">
+          <img src="assets/images/icon-thank-you.svg" alt="thank-you" />
+          <h1 class="marine_blue_txt">Thank you!</h1>
+          <p class="cool_gray_txt">
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 end -->
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
