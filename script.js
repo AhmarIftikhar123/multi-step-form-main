@@ -223,7 +223,7 @@ let getTotalAmount = () => {
   let total_bill_opt = document.querySelector(".total_bill");
   let plan_prize = document.querySelector("#plan_prize");
 
-  let plan_prize_str = parseInt(plan_prize.innerText.match(/\d/g));
+  let plan_prize_str = parseInt(plan_prize.innerText.match(/\d+/g));
 
   let all_addOns_prizes = document.querySelectorAll(
     ".service_selected_box .servie_prize"
